@@ -1,0 +1,20 @@
+.login-layout {
+    background-color: #ffffff;
+}
+
+table.dataTable tbody tr.selected {
+  background-color: #b0bed9;
+}
+
+.la {
+    width: 100px;
+    line-height: 31px;
+}
+
+td.details-control {
+    background: rgba(0, 0, 0, 0)  no-repeat scroll center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: rgba(0, 0, 0, 0)  no-repeat scroll center center;
+}

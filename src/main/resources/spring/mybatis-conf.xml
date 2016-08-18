@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置有严格的顺序-->
+    <properties resource="jdbc.properties"/>
+
+    <!--SQL日志打印-->
+    <settings>
+        <!--logPrefix决定了所有log前缀，所以只需要配置logPrefix就行了.
+        "."：这个点不能少
+        mybatis_sql：需要和log4j中华配置一致
+        -->
+        <!--<setting name="logPrefix" value="mybatis_sql."/>-->
+        <setting name="logImpl" value="LOG4J"/>
+
+        <!-- 二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!-- 配置实体类的别名，配置实体类别名的目的是为了在引用实体类时可以使用实体类的别名来代替实体类，达到简写的目的 -->
+    <typeAliases>
+        <!-- 为实体类me.gacl.domain.User配置一个别名_User -->
+        <!-- <typeAlias type="me.gacl.domain.User" alias="_User"/> -->
+        <!-- 为me.gacl.domain包下的所有实体类配置别名，MyBatis默认的设置别名的方式就是去除类所在的包后的简单的类名
+        比如me.gacl.domain.User这个实体类的别名就会被设置成User
+        userMapper.xml parameterType="com.mybatis.base.entity.User" 中不需要写全包名
+         -->
+        <package name="com.mybatis.base.entity"/>
+    </typeAliases>
+
+
+    <!--
+             development : 开发模式
+             work : 工作模式
+         -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <!--<property name="driver" value="com.mysql.jdbc.Driver"/>-->
+                <!--<property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>-->
+                <!--<property name="username" value="root"/>-->
+                <!--<property name="password" value="root"/>-->
+                <!-- value属性值引用db.properties配置文件中配置的值 -->
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${name}"/>
+                <property name="password" value="${password}"/>
+
+            </dataSource>
+        </environment>
+    </environments>
+
+
+
+<!--    <mappers>
+        &lt;!&ndash; 注册userMapper.xml文件，
+         userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml&ndash;&gt;
+        <mapper resource="mapper/userMapper.xml"/>
+        <mapper resource="mapper/orderMapper.xml"/>
+        <mapper resource="mapper/classMapper.xml"/>
+
+        &lt;!&ndash; 注册UserMapper映射接口&ndash;&gt;
+        <mapper class="com.mybatis.base.mapper.UserMapper"/>
+    </mappers>-->
+
+
+</configuration>
