@@ -40,7 +40,7 @@
                     <div class="center">
                         <h1>
                             <i class="ace-icon fa fa-leaf green"></i>
-                            <span class="red">tomcat1 ====> 界面化管理系统</span>
+                            <span class="red">界面化管理系统</span>
                         </h1>
                     </div>
 

@@ -1,6 +1,6 @@
 package com.web.framework.controller.base;
-
 import com.web.framework.service.LogService;
+import com.web.framework.service.UserService;
 
 import javax.annotation.Resource;
 
@@ -16,5 +16,8 @@ public class BaseController {
 
     @Resource
     protected LogService logService;
+
+    @Resource
+    protected UserService userService;
 
 }

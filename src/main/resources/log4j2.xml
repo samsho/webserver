@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Configuration>
     <Properties>
-        <Property name="log.dir">/myLogs/Boots/BootsFramework/log.log</Property>
+        <Property name="log.dir">/MyLogs/Boots/BootsFramework/log.log</Property>
     </Properties>
 
     <Appenders>
@@ -23,5 +23,9 @@
             <AppenderRef ref="Console" />
             <AppenderRef ref="AsyncRolling" />
         </Root>
+
+        <logger name="com.web.framework.dao" level="debug" additivity="false">
+            <appender-ref ref="Console"/>
+        </logger>
     </Loggers>
 </Configuration>

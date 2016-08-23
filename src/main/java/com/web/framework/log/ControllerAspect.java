@@ -2,8 +2,9 @@ package com.web.framework.log;
 
 import com.web.framework.bean.Bean;
 import com.web.framework.bean.base.User;
-import com.web.framework.entity.LogEntity;
 import com.web.framework.service.LogService;
+import com.web.framework.entity.LogEntity;
+
 import com.web.framework.utils.JsonUtil;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;

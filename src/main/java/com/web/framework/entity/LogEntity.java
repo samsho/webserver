@@ -1,13 +1,5 @@
 package com.web.framework.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -19,9 +11,7 @@ import java.util.Date;
  * @author sam-sho
  * @version V1.0
  */
-@Entity
-@Table(name = "boot_log")
-public class LogEntity implements Serializable{
+public class LogEntity implements Serializable {
 
     private int id;
     private String username;
@@ -33,8 +23,7 @@ public class LogEntity implements Serializable{
     private String ip;
     private Date createTime = new Date();
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     public int getId() {
         return id;
     }
@@ -43,7 +32,7 @@ public class LogEntity implements Serializable{
         this.id = id;
     }
 
-    @Column(name = "username")
+
     public String getUsername() {
         return username;
     }
@@ -51,7 +40,7 @@ public class LogEntity implements Serializable{
     public void setUsername(String username) {
         this.username = username;
     }
-    @Column(name = "jobName")
+
     public String getJobName() {
         return jobName;
     }
@@ -59,7 +48,7 @@ public class LogEntity implements Serializable{
     public void setJobName(String jobName) {
         this.jobName = jobName;
     }
-    @Column(name = "action")
+
     public String getAction() {
         return action;
     }
@@ -67,7 +56,7 @@ public class LogEntity implements Serializable{
     public void setAction(String action) {
         this.action = action;
     }
-    @Column(name = "args")
+
     public String getArgs() {
         return args;
     }
@@ -75,7 +64,7 @@ public class LogEntity implements Serializable{
     public void setArgs(String args) {
         this.args = args;
     }
-    @Column(name = "exception")
+
     public String getException() {
         return exception;
     }
@@ -84,7 +73,6 @@ public class LogEntity implements Serializable{
         this.exception = exception;
     }
 
-    @Column(name = "url")
     public String getUrl() {
         return url;
     }
@@ -93,7 +81,6 @@ public class LogEntity implements Serializable{
         this.url = url;
     }
 
-    @Column(name = "ip")
     public String getIp() {
         return ip;
     }
@@ -102,7 +89,6 @@ public class LogEntity implements Serializable{
         this.ip = ip;
     }
 
-    @Temporal(TemporalType.DATE)
     public Date getCreateTime() {
         return createTime;
     }

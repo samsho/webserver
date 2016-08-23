@@ -30,44 +30,13 @@ public class TableController extends BaseController {
     @MethodAnnotation(type = MethodAnnotation.MethodType.READ, desc = "dataTable")
     @RequestMapping(value = "/dataTable")
     public String dataTable(ModelMap map) {
-        map.addAttribute("logs", logService.getList(-1, -1, null, null));
+//        map.addAttribute("logs", logService.getList());
         logger.info("++++++++++  日志  ++++++++");
         return "/table/dataTable";
     }
 
-    /**
-     * datatables 后台分页
-     * @param draw
-     * @param start
-     * @param length
-     * @param out
-     */
-    @RequestMapping(value = "/ajax/dataTable")
-    public void dataTable(int draw, int start, int length,PrintWriter out) {
 
-        int recordsTotal = logService.getTotalCount(null);//总数
-        List<LogEntity> list = logService.getList(start, length, null, null);
-        String data = "";
-        try {
-            data = JsonUtil.toJson(list);
-        } catch (IOException e) {
-            logger.error("数据失败");
-        }
 
-        String result = "{\"draw\":"+ draw + ",\"recordsTotal\": "+ recordsTotal
-                +",\"recordsFiltered\": "+recordsTotal +",\"data\": "+ data +"}";
-
-        logger.info(result);
-        out.write(result);
-    }
-
-    @MethodAnnotation(type = MethodAnnotation.MethodType.READ, desc = "jpTable")
-    @RequestMapping(value = "/jpTable")
-    public String jpTable(ModelMap map) {
-        map.addAttribute("logs", logService.getList(-1, -1, null, null));
-        logger.info("++++++++++  日志  ++++++++");
-        return "/table/dataTable";
-    }
 
 
 }
