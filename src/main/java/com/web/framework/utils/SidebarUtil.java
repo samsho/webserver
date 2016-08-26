@@ -25,6 +25,7 @@ public class SidebarUtil {
         formManager.addChild(new SidebarItem("文件上传", "/form/validatorForm", "fa-mars-stroke-h"));
         formManager.addChild(new SidebarItem("编辑器", "/form/validatorForm", "fa-mars-stroke-h"));
         formManager.addChild(new SidebarItem("日期选择", "/form/validatorForm", "fa-mars-stroke-h"));
+        formManager.addChild(new SidebarItem("select2", "/form/select2", "fa-mars-stroke-h"));
         items.add(formManager);
 
         SidebarItem sysManager = new SidebarItem("系统管理", "/sys", "fa-gear");
