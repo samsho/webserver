@@ -15,7 +15,52 @@
        select2
     </jsp:attribute>
     <jsp:body>
+        <div class="page-header">
+            <h1>用户管理</h1>
+        </div>
 
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+                <h1>简单的select</h1>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1">
+                <select class="js-example-basic-single">
+                    <option value=""></option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+                <h1>多选的select</h1>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1">
+                <select class="js-example-basic-multiple" multiple="multiple">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="YU">YyImhgh</option>
+                    <option value="KI">Kijuhgh</option>
+                </select>
+            </div>
+        </div>
+
+
+        <script>
+            $(function () {
+                $(".js-example-basic-single").select2({
+                    placeholder: "Select a state"
+                });
+
+                $(".js-example-basic-multiple").select2({});
+
+
+            })
+
+        </script>
 
     </jsp:body>
 </t:base_layout>

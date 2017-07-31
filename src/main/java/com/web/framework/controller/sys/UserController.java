@@ -37,7 +37,7 @@ public class UserController extends BaseController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(RedirectAttributesModelMap map, User user) {
         userService.save(user);
-        map.addFlashAttribute("success", "新增成功");
+        map.addFlashAttribute("success", "鏂板鎴愬姛");
         return "redirect:list";
 
     }
